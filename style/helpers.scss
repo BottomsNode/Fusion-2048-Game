@@ -1,0 +1,47 @@
+@use "sass:math";
+
+// --- Transition mixins ---
+@mixin transition($args...) {
+  transition: $args;
+}
+
+@mixin transition-property($args...) {
+  transition-property: $args;
+}
+
+// --- Animation mixins ---
+@mixin animation($args...) {
+  animation: $args;
+}
+
+@mixin animation-fill-mode($args...) {
+  animation-fill-mode: $args;
+}
+
+// --- Transform mixin ---
+@mixin transform($args...) {
+  transform: $args;
+}
+
+// --- Keyframe animations ---
+@mixin keyframes($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+// --- Media queries ---
+@mixin smaller($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+// --- Clearfix ---
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
